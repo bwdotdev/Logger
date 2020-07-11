@@ -104,3 +104,4 @@ dist
 .tern-port
 
 publish.cmd
+lib/

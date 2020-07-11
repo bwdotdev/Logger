@@ -1,15 +1,22 @@
 {
   "name": "@bwatton/logger",
-  "version": "1.0.0",
-  "main": "dist/index.js",
+  "version": "1.0.3",
+  "main": "lib/index.js",
   "repository": "https://github.com/bradw/Logger.git",
   "author": "Bradley Watton <mail@bradleyw.me>",
   "license": "MIT",
+  "types": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "chalk": "^4.1.0"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "typescript": "^3.9.6"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
