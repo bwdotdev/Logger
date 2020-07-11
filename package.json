@@ -6,6 +6,7 @@
   "author": "Bradley Watton <mail@bradleyw.me>",
   "license": "MIT",
   "types": "lib/index.d.ts",
+  "keywords": ["logger", "node", "debug"],
   "publishConfig": {
     "access": "public"
   },
