@@ -1,6 +1,6 @@
 {
   "name": "@bwatton/logger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "lib/index.js",
   "repository": "https://github.com/bradw/Logger.git",
   "author": "Bradley Watton <mail@bradleyw.me>",

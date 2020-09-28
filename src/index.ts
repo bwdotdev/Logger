@@ -87,25 +87,35 @@ export default class Logger {
     if(moduleName.length > Logger.longestModule) Logger.longestModule = moduleName.length
   }
 
-  public debug(...args: any) {
+  public as(moduleName: string): Logger {
+    const RenamedLogger = (this.constructor as { new (...args: any[]): Logger })
+    const logger = new RenamedLogger(moduleName, this.config)
+    Object.assign(logger, this)
+
+    logger.moduleName = moduleName
+
+    return logger
+  }
+
+  public debug(...args: any): void {
     this.print(this.config.debugStyle(this.alignedTypes[0]), ...args)
   }
 
-  public info(...args: any) {
+  public info(...args: any): void {
     this.print(this.config.infoStyle(this.alignedTypes[1]), ...args)
   }
 
-  public warn(...args: any) {
+  public warn(...args: any): void {
     this.print(this.config.warnStyle(this.alignedTypes[3]), ...args)
   }
 
-  public error(...args: any) {
+  public error(...args: any): void {
     this.print(this.config.errorStyle(this.alignedTypes[2]), ...args)
   }
 
   // TODO: Make this method as logic-less (and therefore performant) as possible
   // Calling 3 RegEx queries on each log for example isn't great
-  private print(type: string, ...args: any) {
+  private print(type: string, ...args: any): void {
     const now = new Date()
     let time = now.toLocaleTimeString('en-GB', { hour12: false })
 
